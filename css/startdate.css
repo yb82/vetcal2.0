@@ -1,0 +1,7 @@
+.editable {
+	contenteditable :true;
+}
+.startdatetable{
+	table-layout: fixed;
+	width: 500px;
+}
