@@ -12,10 +12,12 @@ class Receivedata{
 	private $application;
 	private $enrolmentFeeWaive = false;
 	private $paymentPlanFeeWaive = false;
+	private $promotion = false;
 	private $materialFeeWaive = false;
 	private $userEnrolFeeFlag = false;
 	private $userMaterialFeeFlag = false;
 	private $userDiscountFlag = false;
+
 	private $enrolmentFee ;
 	
 	private $materialFee ;
@@ -289,6 +291,9 @@ class Receivedata{
 	public function getDiscount(){
 		return $this->discountPrice;
 	}
+	public function getPromotionFlag(){
+		return $this->promotion;
+	}
 	public function setCourse($courseName,$courseStartdate){
 			$this->courseData[] = Array($courseName, $courseStartdate);
 	
@@ -301,7 +306,9 @@ class Receivedata{
 					$this->materialFeeWaive = true;
 				} else if($waiveOption == "paymentplan"){
 					$this->paymentPlanFeeWaive= true;
-				} 
+				} else if($waiveOption == "promotion10"){
+					$this->promotion = true;
+				}
 			
 	}
 	public function setDiscountPrice($discount){

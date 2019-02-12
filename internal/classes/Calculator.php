@@ -33,6 +33,7 @@ class Calculator{
 	public $total;
 	public $finalPaymentplan;
 	public $receivedata;
+	private $promotion;
 
 	// calculate the way of marketing then change this payment plan for Becas.
 	// $paymentPlan is marketing payment, $finalPaymentplan is for Enrolment officer.
@@ -312,6 +313,20 @@ class Calculator{
 	private function checkDiscount($tuition){
 		$courseCnt =count($tuition);
 
+		if ($this->receivedata->getPromotionFlag()) {
+				
+			if($this->fee->promotion < 1){
+				foreach ($tuition as $key => $value) {
+					
+					$tuition[$key] = $value* $this->fee->promotion;
+				}
+					
+				
+			}
+
+			
+		}
+	
 		if($this->receivedata->getuseDiscountFlag()){
 			$tuition[$courseCnt-1]-=$this->receivedata->getDiscount();
 		}elseif($courseCnt==2){
@@ -357,8 +372,8 @@ class Calculator{
 		$tuition = $this->checkDiscount($tuition);
 		// deduct course special price.
 		
-		$tempPaymentPlan[0]= 1000;
-		$tempPaymentPlan[1]= 1000;
+		$tempPaymentPlan[0]= 500;
+		$tempPaymentPlan[1]= 1500;
 	//	print_r($this->selectedCourseDataDetail);
 
 		$tempCourseName[0]=$this->selectedCourseDataDetail[0]->courseName;

@@ -7,7 +7,7 @@ require_once('./classes/Datahandler.php');
 $data = new Datahandler();
 
 //print_r($data->courseData);
-           	  //	print_r($data->courseData);
+              //  print_r($data->courseData);
 //include ('../header.php');
 ?>
 
@@ -68,6 +68,7 @@ $data = new Datahandler();
         <td class="options"><input type="checkbox" name="waive" value="enrol" id="waiveE" >EW</td>
         <td class="options"><input type="checkbox" name="waive" value="material" id="waiveM" >MW</td>
         <td class="options"><input type="checkbox" name="waive" value="paymentplan" id="waiveP" >PFW</td>
+        <td class="options"><input type="checkbox" name="waive" value="promotion10" id="waiveP" checked="true">10%</td>
         <td class="options2" style="display: none" id="discounttd"><input type="checkbox" name="discount" value="discount" id="discount" >Custom Discount $<input type="text" name="discountprice"  id="discountprice" disabled="disabled" ></td>
         
       </tr>
