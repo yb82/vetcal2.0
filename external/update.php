@@ -53,7 +53,7 @@ else if(isset($_POST["course1duration"])){
 	$receive = new Receivedata();
 	$courseData = $receive->getUserCourseData();
 	$paymenetOption = $receive->getPaymentOption();
-	$calculator = new Calculator($courseData, $paymenetOption);
+	$calculator = new Calculator($courseData, $paymenetOption,$receive);
 	$result = $calculator->getAllPaymentPlan();
 
 	$paymentPDF = new PDFCreator();

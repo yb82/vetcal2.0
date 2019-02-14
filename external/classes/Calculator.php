@@ -28,15 +28,17 @@ class Calculator{
 	public $error ="hello";
 	public $todayDate;
 	public $total;
+	private $receivedata;
 
 
 
 
-	public function __construct($selectedCourseNameNStartDate,$paymentOption){
+	public function __construct($selectedCourseNameNStartDate,$paymentOption,$receivedata){
 			//$this->courseStartDates= array();
 
 		$this->fee = new Fee();
 		$this->dataHandler = new Datahandler();
+		$this->
 
 		//$this->studentDetail = new StudentDetail();
 		$this->paymentOption = $paymentOption;
@@ -157,13 +159,18 @@ class Calculator{
 	}
 	private function checkDiscount($tuition){
 		$courseCnt =count($tuition);
-		if($this->fee->promotion < 1){
+		if ($this->receivedata->getPromotionFlag()) {
+				
+			if($this->fee->promotion < 1){
 				foreach ($tuition as $key => $value) {
 					
 					$tuition[$key] = $value* $this->fee->promotion;
 				}
 					
 				
+			}
+
+			
 		}
 
 		if($courseCnt==2){

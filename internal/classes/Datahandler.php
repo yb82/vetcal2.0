@@ -44,6 +44,9 @@ class Datahandler{
 			$melong->enrolmentFee = (string)$course['enrolment'];
 			$melong->materialFee = (string)$course['material'];
 			$melong->tuitionFee = (string)$course['tuition'];
+			$melong->courseCode = (string)$course['code'];
+			$melong->weeks =(string)$course['weeks'];
+			$melong->cricos = (string)$course['CRICOS'];
 			//$melong->courseStartDates = explode(",", $course['startdate']);
 			$temp = explode(",", $course['startdate']);
 			$temp1=array();
@@ -72,6 +75,8 @@ class Datahandler{
 		//print_r($this->courseData);
 
 	}
+
+
 	public function loadCourseName(){
 		$output ="";
 		foreach ($this->courseData as $key => $value) {
@@ -112,7 +117,7 @@ class Datahandler{
 
 	}
 	public function getCourseDataByName($courseName){
-		$this->error .=" hello2";
+		
 
 		foreach ($this->courseData as $key=>$value) {
 

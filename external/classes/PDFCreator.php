@@ -137,7 +137,7 @@ class PDFCreator{
 		<br/><br/>
 
 
-		<img src=\"../images/header1.PNG\"  ><br/><br/>
+		<img src=\"./images/header1.PNG\"  ><br/><br/>
 		<h1 style=\"text-align:center\">ALS VET Course Payment Plan</h1><br/>
 		<table class=\"detail\" border=1 cellspacing=0 cellpadding=0>
 			<tr>
@@ -287,7 +287,7 @@ class PDFCreator{
 		</style>
 
 		<body>
-			<img src=\"../images/header.PNG\"  ><br/><br/>
+			<img src=\"./images/header.PNG\"  ><br/><br/>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table>
 			<tr> <td class= \"colPersonal\">Name : ".$studentDetail->getFullName()."</td><td class= \"colPersonal1\">Current Address : ".$studentDetail->currentAddr."</td></tr>
 			<tr> <td class= \"colPersonal\">Date of Birth : ".$studentDetail->dateOfBirth."</td><td  class= \"colPersonal1\">Current Phone : ".$studentDetail->contact."</td></tr>
@@ -299,7 +299,7 @@ class PDFCreator{
 		<br/>
 		<br/>		
 
-		<img src=\"../images/visa.PNG\"  \><br/>
+		<img src=\"./images/visa.PNG\"  \><br/>
 
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table>
 		<tr> <td class= \"colVisa\">Visa : ".$studentDetail->visa."</td><td class= \"colVisa\">DIBP Office : ".$studentDetail->dibp."</td><td class=\"colVisa\" >OSHC : ".$studentDetail->insurance."</td></tr>
@@ -316,7 +316,7 @@ class PDFCreator{
 	$html1 .="<br/><br/>
 
 
-	<img src=\"../images/course.PNG\" \><br/>
+	<img src=\"./images/course.PNG\" \><br/>
 	";
 
 	$i = 0;
@@ -338,12 +338,12 @@ class PDFCreator{
 	$html1.="<br/></table>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label class=\"otherschool\">Payment Option : ".$paymentOption."</label><br/>";
 
-	$html1 .= "<img src=\"../images/last1.PNG\" class='z-2' ><br/>
+	$html1 .= "<img src=\"./images/last1.PNG\" class='z-2' ><br/>
 	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table class=\"enrol\">
 	 <tr><td>We can help arange both homestay and student accommodation; please contact us for detail, There is a 4-week minimum stay for either service.
 	 </td></tr></table><br/><br/>
 	 ";
-	$html1 .= "<img src=\"../images/last1_1.PNG\" class='z-2' ><br/>
+	$html1 .= "<img src=\"./images/last1_1.PNG\" class='z-2' ><br/>
 	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table class=\"enrol\">
 	 <tr><td>
 1. <b>Send this form and signed copy of your passport</b> direct to IH Brisbane - ALS (certenrol@ihbrisbane.com.au) or via one of our Education Agents (include your agent’s stamp on your passport).</td></tr>
@@ -366,7 +366,7 @@ class PDFCreator{
 
 
 
-	$html1 .= "<br/><br/><br/><img src=\"../images/last2.PNG\" class='z-2' >";
+	$html1 .= "<br/><br/><br/><img src=\"./images/last2.PNG\" class='z-2' >";
 
 
 	$pdf->writeHTML ( $html1, true, false, true, false, '' );

@@ -52,6 +52,7 @@ $(document).ready(function() {
 
   });
 
+  
   $("#submitform").click(function(e){
     var selectedCourses = $("#lstbox2 option").length;
     var flag = true;
@@ -262,20 +263,40 @@ $(document).ready(function() {
         var output ="<table class =\"table is-narrow\">" ;
         output += "<tr  ><th>Due Date</th><th >Fee Description</th><th>Course Name</th><th>Payment Amount</th></tr>"
         var tmpCourseName ="";
-
+        var tmpDescription ="";
         for(var i =  0 ; i < s_Data.length; i ++) {
 
-          if(tmpCourseName != s_Data[i]["courseName"]){
+          tmpDescription = s_Data[i]["description"];
+
+          if(tmpCourseName != s_Data[i]["courseName"] ){
             output += '<tr><td>'+s_Data[i]["dueDate"]+"</td><td>"+s_Data[i]["description"]+"</td><td style='font-weight: bold;'>"+s_Data[i]["courseName"]+"</td><td>$"+s_Data[i]["amount"]+"</td></tr>";  
-          } else{
+          } else if(tmpDescription !="Total"){
           output += '<tr><td>'+s_Data[i]["dueDate"]+"</td><td>"+s_Data[i]["description"]+"</td><td>"+s_Data[i]["courseName"]+"</td><td>$"+s_Data[i]["amount"]+"</td></tr>";
+          } else if(tmpDescription =="Total"){
+            output += '<tr><td>'+s_Data[i]["dueDate"]+"</td><td>"+s_Data[i]["description"]+"</td><td>"+s_Data[i]["courseName"]+"</td><td>$"+s_Data[i]["amount"]+"</td></tr>";
+            $('#result').append(output+"</table>");
+            i++;
+            var courseDetails="<table class =\"table is-narrow\">";
+            s_Data[i].forEach(function(e){
+                courseDetails += '<tr><td>COURSE</td><td>'+e["COURSE"]+'</td></tr>';
+                courseDetails += '<tr><td>CRICOS CODE</td><td>'+e["CRICOS CODE"]+'</td></tr>';
+                courseDetails += '<tr><td>COURSE LENGTH</td><td>'+e["COURSE LENGTH"]+'</td></tr>';
+                courseDetails += '<tr><td>START DATE</td><td>'+e["START DATE"]+'</td></tr>';
+                courseDetails += '<tr><td>END DATEE</td><td>'+e["END DATE"]+'</td></tr><br/><br/></table><table class =\"table is-narrow\">';
+                
+            });
+            $('#coursetable').append(courseDetails);
+            $('#showcoursetable').slideDown();
+            $('#showpayment').slideDown();
+            break;
+
           }
-          tmpCourseName = s_Data[i]["courseName"]
 
         }
-        $('#result').append(output+"</table>");
+        tmpCourseName = s_Data[i]["courseName"];
+        
       }           
-      $('#showpayment').slideDown();
+      
       
     });
   }

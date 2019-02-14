@@ -33,6 +33,7 @@ class Calculator{
 	public $finalPaymentplan;
 	public $receivedata;
 	private $promotion;
+	private $courseDetailOutput =array();
 
 	// calculate the way of marketing then change this payment plan for Becas.
 	// $paymentPlan is marketing payment, $finalPaymentplan is for Enrolment officer.
@@ -87,7 +88,7 @@ class Calculator{
 
 			}
 		}
-		$this->error.="finalPaymentplan";
+		
 		$this->finalizePayment();
 		
 
@@ -127,8 +128,35 @@ class Calculator{
 			//print_r( $value );
 			if($value->enrolmentFee == 0){
 				$enrolFlag = true;					
+				break;
 			}
 		}
+
+		// get course details and make a table form.
+		$tempEndDate =array();
+		$tempcourseName = array();
+		$tempstringStartdate = array();
+		foreach ($this->selectedCourseNameNStartDate as $key => $value) {
+			
+			$tempcourseName[] = $value[0];
+			$tempstringStartdate[] = $value[1];
+			$tempEndDate[]= $this->strToDate($value[1]);
+
+		}
+		$i = 0;
+		foreach ($this->selectedCourseDataDetail as $key => $value) {
+			//print_r( $value );
+					$daysToAddup = $value->duration *7 -3;
+					$tempDate = $tempEndDate[$i]->modify('+'.$daysToAddup.' day' );
+					$strEndDate = $this->dateToString($tempDate);
+
+					$this->courseDetailOutput[] = array("COURSE"=>$value->courseName." ".$value->courseCode ,"CRICOS CODE"=>$value->cricos,"COURSE LENGTH"=>$value->duration." week","START DATE"=>$tempstringStartdate[$i],"END DATE"=>$strEndDate );
+					
+
+		}
+
+
+
 		if($this->receivedata->getEnrolmentFeeWaive()){
 			$enrolFlag = true;
 		}
@@ -182,6 +210,10 @@ class Calculator{
 		//$this->error .="helloPayment<br/>";
 		
 		return $this->finalPaymentplan;
+	}
+	public function getCourseDetailOutput()
+	{
+		return $this->courseDetailOutput;
 	}
 	private function finalizePayment(){
 		$remain = 0; 
@@ -308,6 +340,7 @@ class Calculator{
 
         }
                 $this->finalPaymentplan[]= new Outputform("Total", "", $this->total);
+                $this->finalPaymentplan[] = $this->getCourseDetailOutput();
 	}
 	private function checkDiscount($tuition){
 		$courseCnt =count($tuition);

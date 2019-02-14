@@ -10,6 +10,7 @@ class Receivedata{
 	private $paymentOption;
 	private $courseData;
 	private $application;
+	private $promotion = false;
 		//private $finishdates;
 	private $studentDetail;
 
@@ -146,6 +147,9 @@ class Receivedata{
 		if(isset($_POST["Paymentoption"])){
 			$this->paymentOption = $_POST["Paymentoption"];
 		}	
+		if(isset($_POST["promotion"]) && $_POST["promotion"]== "promotion10"){
+			$this->promotion = true;
+		}
 
 		if(isset($_POST["fname"])){
 			$this->studentDetail->fName = $_POST["fname"];
@@ -221,6 +225,9 @@ class Receivedata{
 	}
 	public function getStudentDetail(){
 		return $this->studentDetail;
+	}
+	public function getPromotionFlag(){
+		return $this->promotion;
 	}
 
 }

@@ -6,12 +6,9 @@ require_once('./classes/Fee.php');
 require_once('./classes/Datahandler.php');
 $data = new Datahandler();
 
-//print_r($data->courseData);
-           	  //	print_r($data->courseData);
-//include ('../header.php');
 ?>
 
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel ="stylesheet" type="text/css" href="./css/calculator.css">
 
@@ -95,7 +92,7 @@ $data = new Datahandler();
 <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="./js/calculator.js"></script>
-<img src="../images/header1.PNG"/ class="mainimg">
+<img src="./images/header1.PNG"/ class="mainimg">
 <div class = "main">
   
   <form name="certform"  id="certform" method="post" action="./update.php">
@@ -142,7 +139,8 @@ $data = new Datahandler();
     
     <br/>
     <br/>
-    
+    <input type="checkbox" name="promotion" value="promotion10" id="waiveP" checked="true">Etension student
+
 
 <!--
   <div id="1-course" style="display:none"> -->
