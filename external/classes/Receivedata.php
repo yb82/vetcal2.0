@@ -145,7 +145,7 @@ class Receivedata{
 
 
 		if(isset($_POST["Paymentoption"])){
-			$this->paymentOption = $_POST["Paymentoption"];
+			$this->paymentOption = true;
 		}	
 		if(isset($_POST["promotion"]) && $_POST["promotion"]== "promotion10"){
 			$this->promotion = true;

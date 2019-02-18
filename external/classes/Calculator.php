@@ -5,7 +5,7 @@ require_once ("./classes/Datahandler.php");
 require_once ("./classes/Fee.php");
 require_once ("./classes/StudentDetail.php");
 require_once ("./classes/Outputform.php");
-require_once ('../libraries/pdflib/tcpdf.php');
+require_once ('./libraries/pdflib/tcpdf.php');
 
 define( "TENWEEKS", "+67 day");
 define( "FOURWEEKS", "+28 day");
@@ -38,7 +38,7 @@ class Calculator{
 
 		$this->fee = new Fee();
 		$this->dataHandler = new Datahandler();
-		$this->
+		$this->receivedata = $receivedata;
 
 		//$this->studentDetail = new StudentDetail();
 		$this->paymentOption = $paymentOption;
