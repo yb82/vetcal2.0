@@ -139,7 +139,7 @@ $data = new Datahandler();
     
     <br/>
     <br/>
-    <input type="checkbox" name="promotion" value="promotion10" id="waiveP" >Etension student
+    <input type="checkbox" name="promotion" value="promotion10" id="waiveP" >Extension student
 
 
 <!--

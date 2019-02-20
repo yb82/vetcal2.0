@@ -177,7 +177,7 @@ $data = new Datahandler();
 <input type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check Payment Plan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" id="submitform" class= "button is-dark is-large"  /> 
 <!--<input type="button" value="Complete Application Details" id="createform" class= "button is-dark is-large" style="display: none" /> -->
 <input type="button" value="Reset" class= "button is-light is-large"  onClick="window.location.reload()"><br/><br/>
-<input type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show Course Table&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" id="showcoursedetail" class= "button is-dark is-large"  /> 
+
 <br/>
 <br/>
 <div id="showcoursetable" style="display: none">

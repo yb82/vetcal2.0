@@ -405,7 +405,7 @@ class Calculator{
 		// deduct course special price.
 		
 		$tempPaymentPlan[0]= 500;
-		$tempPaymentPlan[1]= 1500;
+		$tempPaymentPlan[1]= 1000;
 	//	print_r($this->selectedCourseDataDetail);
 
 		$tempCourseName[0]=$this->selectedCourseDataDetail[0]->courseName;
@@ -423,43 +423,43 @@ class Calculator{
 		switch ($courseCnt) {
 			case 2:
 
-			$tuition[0]-=1000;
-			$tuition[1]-=1000;
+			$tuition[0]-=750;
+			$tuition[1]-=750;
 
 			break;
 			
 			case 3:
-			$tuition[0]-=1000;
-			$tuition[1]-=500;
-			$tuition[2]-=500;
+			$tuition[0]-=750;
+			$tuition[1]-=375;
+			$tuition[2]-=375;
 				# code...
 			break;
 			
 			case 4:
 				# code...
-			$tuition[0]-=500;
-			$tuition[1]-=500;
-			$tuition[2]-=500;
-			$tuition[3]-=500;
+			$tuition[0]-=375;
+			$tuition[1]-=375;
+			$tuition[2]-=375;
+			$tuition[3]-=375;
 			break;
 			
 			case 5:
 				# code...
-			$tuition[0]-=400;
-			$tuition[1]-=400;
-			$tuition[2]-=400;
-			$tuition[3]-=400;
-			$tuition[4]-=400;
+			$tuition[0]-=300;
+			$tuition[1]-=300;
+			$tuition[2]-=300;
+			$tuition[3]-=300;
+			$tuition[4]-=300;
 			break;
 			
 			case 6:
 				# code...
-			$tuition[0]-=400;
-			$tuition[1]-=400;
-			$tuition[2]-=300;
-			$tuition[3]-=300;
-			$tuition[4]-=300;
-			$tuition[5]-=300;
+			$tuition[0]-=300;
+			$tuition[1]-=300;
+			$tuition[2]-=225;
+			$tuition[3]-=225;
+			$tuition[4]-=225;
+			$tuition[5]-=225;
 			break;
 			
 		}
